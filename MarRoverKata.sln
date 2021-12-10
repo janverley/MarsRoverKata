@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarRoverKata", "MarRoverKata\MarRoverKata.csproj", "{974E3FA8-954D-42F7-BB9D-E34C4A192C3C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRoverKata", "MarsRoverKata\MarsRoverKata.csproj", "{974E3FA8-954D-42F7-BB9D-E34C4A192C3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRoverKata.Tests", "MarsRoverKata.Tests\MarsRoverKata.Tests.csproj", "{B13B74CA-3322-4988-92A6-95B9A91AD9BF}"
 EndProject
