@@ -1,36 +1,40 @@
-﻿namespace MarsRoverKata;
+﻿using System.Collections.Generic;
 
-public record Point(int X, int Y);
-
-public enum Direction
+namespace MarsRoverKata
 {
-    N,
-    S,
-    E,
-    W
-}
+    public record Point(int X, int Y);
 
-
-public class Rover
-{
-    public void Init(Point startingPoint, Direction heading)
+    public enum Direction
     {
-        StartingPoint = startingPoint;
-        Heading = heading;
+        N,
+        S,
+        E,
+        W
     }
 
-    public Point StartingPoint { get; set; } = new Point(0, 0);
 
-    public Direction Heading { get; set; }
-    public void Execute(IEnumerable<Command> commands)
+    public class Rover
     {
-    }
-}
+        public Point StartingPoint { get; set; } = new(0, 0);
 
-public enum Command
-{
-    F,
-    B,
-    L,
-    R
+        public Direction Heading { get; set; }
+
+        public void Init(Point startingPoint, Direction heading)
+        {
+            StartingPoint = startingPoint;
+            Heading = heading;
+        }
+
+        public void Execute(IEnumerable<Command> commands)
+        {
+        }
+    }
+
+    public enum Command
+    {
+        F,
+        B,
+        L,
+        R
+    }
 }
