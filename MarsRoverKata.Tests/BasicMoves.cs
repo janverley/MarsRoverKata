@@ -34,8 +34,8 @@ public class BasicMoves
     public void After1Back_PositionAndHeadingShouldBeCorrect()
     {
         var sut = InitialRover();
-        sut.Execute(new List<Command> {Command.F});
-            
+        sut.Execute(new List<Command> {Command.B});
+
         sut.CurrentPosition.ShouldBe(new Point(-1, 1));
         sut.CurrentHeading.ShouldBe(Direction.N);
     }

@@ -1,3 +1,3 @@
 ﻿namespace MarsRoverKata;
 
-public record Point(int X, int Y);
+public record Point(decimal latitude, decimal longitude);
