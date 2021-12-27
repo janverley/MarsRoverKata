@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using Shouldly;
 using Xunit;
 using Xunit.Abstractions;
@@ -45,7 +46,7 @@ public class BasicMovesGeographicCoordinates
     }
 
     [Fact]
-    public void AfterwholePlanetToNorth_PositionAndHeadingShouldBeCorrect()
+    public void AfterWholePlanetToNorth_PositionAndHeadingShouldBeCorrect()
     {
         var sut = InitialRover();
 
@@ -60,7 +61,7 @@ public class BasicMovesGeographicCoordinates
         sut.Execute(commands);
 
         testOutputHelper.WriteLine(sut.ToString());
-        testOutputHelper.WriteLine(sut.CurrentPosition.ArcLength(Point.Origin).ToString());
+        testOutputHelper.WriteLine(sut.CurrentPosition.ArcLength(Point.Origin).ToString(CultureInfo.InvariantCulture));
         sut.CurrentPosition.Diff(Point.Origin).ArcLength().ShouldBeLessThan(1);
 
         sut.CurrentHeading.ShouldBe(Direction.N);
@@ -82,7 +83,7 @@ public class BasicMovesGeographicCoordinates
         sut.Execute(commands);
 
         testOutputHelper.WriteLine(sut.ToString());
-        testOutputHelper.WriteLine(sut.CurrentPosition.ArcLength(Point.Origin).ToString());
+        testOutputHelper.WriteLine(sut.CurrentPosition.ArcLength(Point.Origin).ToString(CultureInfo.InvariantCulture));
         sut.CurrentPosition.Diff(Point.Origin).ArcLength().ShouldBe(5324215, 1);
         sut.CurrentPosition.Diff(Point.NorthPole).ArcLength().ShouldBe(0, 1);
 
@@ -104,7 +105,7 @@ public class BasicMovesGeographicCoordinates
         sut.Execute(commands);
 
         testOutputHelper.WriteLine(sut.ToString());
-        testOutputHelper.WriteLine(sut.CurrentPosition.ArcLength(Point.Origin).ToString());
+        testOutputHelper.WriteLine(sut.CurrentPosition.ArcLength(Point.Origin).ToString(CultureInfo.InvariantCulture));
         sut.CurrentPosition.Diff(Point.Origin).ArcLength().ShouldBe(2662107.1, 1);
         sut.CurrentPosition.Diff(Point.NorthPole).ArcLength().ShouldBe(2662107.1, 1);
 
@@ -198,7 +199,7 @@ public class BasicMovesGeographicCoordinates
 
         sut.CurrentHeading.ShouldBe(Direction.N);
 
-        testOutputHelper.WriteLine(sut.CurrentPosition.ArcLength().ToString());
+        testOutputHelper.WriteLine(sut.CurrentPosition.ArcLength().ToString(CultureInfo.InvariantCulture));
 
         sut.CurrentPosition.Diff(Point.Origin).ArcLength().ShouldBeLessThan(0.0001);
         
@@ -225,7 +226,7 @@ public class BasicMovesGeographicCoordinates
 
         sut.CurrentHeading.ShouldBe(Direction.N);
 
-        testOutputHelper.WriteLine(sut.CurrentPosition.ArcLength().ToString());
+        testOutputHelper.WriteLine(sut.CurrentPosition.ArcLength().ToString(CultureInfo.InvariantCulture));
 
         sut.CurrentPosition.Diff(Point.Origin).ArcLength().ShouldBeLessThan(0.2);
         
@@ -248,7 +249,7 @@ public class BasicMovesGeographicCoordinates
 
         sut.CurrentHeading.ShouldBe(Direction.N);
 
-        testOutputHelper.WriteLine(sut.CurrentPosition.ArcLength().ToString());
+        testOutputHelper.WriteLine(sut.CurrentPosition.ArcLength().ToString(CultureInfo.InvariantCulture));
 
         Math.Abs(1000 - sut.CurrentPosition.Diff(Point.Origin).ArcLength()).ShouldBeLessThan(0.01);
     }
@@ -260,7 +261,7 @@ public class BasicMovesGeographicCoordinates
         sut.Init(new Point(89.99, 10), Direction.N);
 
         testOutputHelper.WriteLine(sut.ToString());
-        testOutputHelper.WriteLine(sut.CurrentPosition.ArcLength(Point.NorthPole).ToString());
+        testOutputHelper.WriteLine(sut.CurrentPosition.ArcLength(Point.NorthPole).ToString(CultureInfo.InvariantCulture));
         
         var commands = new List<Command>();
 
@@ -271,7 +272,7 @@ public class BasicMovesGeographicCoordinates
 
         sut.Execute(commands);
         testOutputHelper.WriteLine(sut.ToString());
-        testOutputHelper.WriteLine(sut.CurrentPosition.ArcLength(Point.NorthPole).ToString());
+        testOutputHelper.WriteLine(sut.CurrentPosition.ArcLength(Point.NorthPole).ToString(CultureInfo.InvariantCulture));
 
         sut.CurrentHeading.ShouldBe(Direction.S);
         Math.Abs(1000 - sut.CurrentPosition.Diff(Point.Origin).ArcLength()).ShouldBeLessThan(0.01);
