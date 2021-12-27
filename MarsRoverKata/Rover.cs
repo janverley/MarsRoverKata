@@ -2,6 +2,11 @@
 {
     public class Rover
     {
+        public override string ToString()
+        {
+            return $"H:{CurrentHeading} P:{CurrentPosition}";
+        }
+
         public Point CurrentPosition { get; private set; } = new(0, 0);
 
         public Direction CurrentHeading { get; private set; }
