@@ -1,9 +1,10 @@
-﻿namespace MarsRoverKata;
-
-public enum Direction
+﻿namespace MarsRoverKata
 {
-    N,
-    S,
-    E,
-    W
+    public enum Direction
+    {
+        N,
+        S,
+        E,
+        W
+    }
 }

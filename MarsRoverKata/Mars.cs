@@ -30,8 +30,8 @@
 
         private static Point WrapAtEquator(Point start)
         {
-            return start.ShouldWrapAtEquator() 
-                ? new Point(start.latitude - Mars.EquatorLength, start.longitude) 
+            return start.ShouldWrapAtEquator()
+                ? new Point(start.latitude - EquatorLength, start.longitude)
                 : start;
         }
 

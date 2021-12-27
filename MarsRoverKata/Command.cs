@@ -1,9 +1,10 @@
-﻿namespace MarsRoverKata;
-
-public enum Command
+﻿namespace MarsRoverKata
 {
-    F,
-    B,
-    L,
-    R
+    public enum Command
+    {
+        F,
+        B,
+        L,
+        R
+    }
 }
