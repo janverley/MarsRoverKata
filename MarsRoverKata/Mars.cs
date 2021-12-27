@@ -11,6 +11,11 @@
             return start.longitude > NorthPoleToEquatorDistance;
         }
 
+        private static bool ShouldWrapAtEquator(this Point start)
+        {
+            return start.latitude > EquatorLength;
+        }
+
         private static Point WrapAtNorthPole(this Point start)
         {
             return start.ShouldWrapAtNorthPole()
@@ -20,7 +25,14 @@
 
         public static Point Move(Point start, Direction direction)
         {
-            return WrapAtNorthPole(InternalMove(start, direction));
+            return WrapAtEquator(WrapAtNorthPole(InternalMove(start, direction)));
+        }
+
+        private static Point WrapAtEquator(Point start)
+        {
+            return start.ShouldWrapAtEquator() 
+                ? new Point(start.latitude - Mars.EquatorLength, start.longitude) 
+                : start;
         }
 
         private static Point InternalMove(Point start, Direction direction)

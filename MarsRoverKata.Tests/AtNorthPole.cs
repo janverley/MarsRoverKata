@@ -22,7 +22,7 @@ namespace MarsRoverKata.Tests
         }
 
         [Fact]
-        public void Wrap()
+        public void ShouldWrap()
         {
             var sut = InitialRover();
             
