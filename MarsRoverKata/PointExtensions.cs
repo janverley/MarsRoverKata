@@ -49,5 +49,18 @@
         {
             return Math.Abs(d - o) < 0.0000000000001;
         }
+        
+        public static double UnWrap(this double angleInDegrees)
+        {
+            //ensure the value will fall within the primary range [-180.0..+180.0]
+            while (angleInDegrees < -180.0)
+                angleInDegrees += 360.0;
+
+            while (angleInDegrees > 180.0)
+                angleInDegrees -= 360.0;
+
+            return angleInDegrees;
+        }
+
     }
 }

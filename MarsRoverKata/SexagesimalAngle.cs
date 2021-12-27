@@ -19,6 +19,8 @@
             while (angleInDegrees > 180.0)
                 angleInDegrees -= 360.0;
 
+            
+            
             var result = new SexagesimalAngle
             {
                 //switch the value to positive
