@@ -2,26 +2,9 @@
 {
     public static class Mars
     {
-        public static double Radius = 3389.50 * 1000;
-        //public static int EquatorLength = 10; // wrap on x axis
-        //public static int NorthPoleToEquatorDistance = 5; // wrap on y axis
-
-        // private static bool ShouldWrapAtNorthPole(this Point start)
-        // {
-        //     return start.Longitude > NorthPoleToEquatorDistance;
-        // }
-        //
-        // private static bool ShouldWrapAtEquator(this Point start)
-        // {
-        //     return start.Latitude > EquatorLength;
-        // }
+        public const double Radius = 3389.50 * 1000;
 
         public static Point Move(Point start, Direction direction)
-        {
-            return InternalMove(start, direction);
-        }
-
-        private static Point InternalMove(Point start, Direction direction)
         {
             double latDiff = 0;
             double longDiff = 0;
